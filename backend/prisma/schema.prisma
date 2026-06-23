@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Category {
+  electronics
+  grocery
+  cosmetic
+  clothing
+  books
+  furniture
+  sports
+  toys
+  automotive
+  jewelry
+}
+
+model Product {
+  id        Int      @id @default(autoincrement())
+  name      String
+  price     Int
+  category  Category
+
+  createdAt DateTime
+  updatedAt DateTime
+
+  @@index([updatedAt(sort: Desc), id(sort: Desc)])
+  @@index([category, updatedAt(sort: Desc), id(sort: Desc)])
+}
