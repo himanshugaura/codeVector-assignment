@@ -16,7 +16,7 @@ const prisma = new PrismaClient({ adapter });
 const TOTAL_PRODUCTS = 200_000;
 
 async function main(): Promise<void> {
-  console.log(`🌱 Seeding ${TOTAL_PRODUCTS.toLocaleString()} products...`);
+  console.log(`Seeding ${TOTAL_PRODUCTS.toLocaleString()} products...`);
 
   const start = Date.now();
 
@@ -42,12 +42,12 @@ async function main(): Promise<void> {
   const elapsed = ((Date.now() - start) / 1000).toFixed(2);
 
   const count = await prisma.product.count();
-  console.log(`✅ Done in ${elapsed}s — ${count.toLocaleString()} total products in DB`);
+  console.log(`Done in ${elapsed}s — ${count.toLocaleString()} total products in DB`);
 }
 
 main()
   .catch((err) => {
-    console.error('❌ Seed failed:', err);
+    console.error('Seed failed:', err);
     process.exit(1);
   })
   .finally(() => prisma.$disconnect());
