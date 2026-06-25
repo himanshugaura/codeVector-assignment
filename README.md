@@ -6,7 +6,7 @@ This is my submission for the CodeVector backend engineering task. It implements
 
 ### Prerequisites
 - Node.js 20+
-- pnpm (or npm/yarn)
+- pnpm 
 - PostgreSQL
 
 ### 1. Database & Seeding (Backend)
